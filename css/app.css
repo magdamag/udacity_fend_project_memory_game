@@ -1,0 +1,165 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    font-family: 'Coda', cursive;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: auto;
+    max-width: 100%;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    width: 640px;
+    min-height: 640px;
+    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+
+.deck .card {
+    height: 120px;
+    width: 120px;
+    background: #2e3d49;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+    transform: rotateY(0);
+    background: #02b3e4;
+    cursor: default;
+}
+
+.deck .card.show {
+    font-size: 33px;
+}
+
+.deck .card.match {
+    cursor: default;
+    background: #02ccba;
+    font-size: 33px;
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: left;
+    width: 345px;
+    margin-bottom: 10px;
+}
+
+.score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+}
+
+/*
+ * Styles for the Modal
+ */
+
+#modal-congrats {
+  display: none;
+  z-index: 1;
+  padding-top: 10px;
+	background-color: #dcf9f2;
+	box-shadow: 3px 3px 3px #6e7472;
+	border-radius: 10px;
+	width: 280px;
+  height: 350px;
+	position: fixed;
+	text-align: center;
+}
+
+.modal-info {
+  margin: auto;
+  padding: 20px;
+  width: 80%;
+}
+
+#playAgain, #cancel {
+  color: #03392c;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.title {
+	font-weight: bolder;
+	font-size: 15px;
+	width: 100%;
+}
+
+@media (max-width: 499px) {
+  .container {
+    display: flex;
+    width: 95%;
+  }
+
+@media (min-width: 500px) {
+  .container {
+    display: flex;
+    width: 95%;
+  }
+
+@media (min-width: 768px) {
+  .container {
+    display: flex;
+    width: 80%;
+  }
