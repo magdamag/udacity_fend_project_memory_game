@@ -33,11 +33,11 @@ body {
 
 h1 {
     font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
+    font-weight: 300px;
 }
 
 /*
- * Styles for the deck of cards
+ * Styles for deck and cards
  */
 
 .deck {
@@ -85,7 +85,7 @@ h1 {
 }
 
 /*
- * Styles for the Score Panel
+ * Styles for score panel
  */
 
 .score-panel {
@@ -112,7 +112,7 @@ h1 {
 }
 
 /*
- * Styles for the Modal
+ * Styles for modal
  */
 
 #modal-congrats {
@@ -146,20 +146,36 @@ h1 {
 	width: 100%;
 }
 
+/*
+ * Responsive screen
+ */
+
 @media (max-width: 499px) {
+  h1 {
+    font-size: 30px;
+  }
   .container {
     display: flex;
     width: 95%;
   }
 
-@media (min-width: 500px) {
-  .container {
-    display: flex;
-    width: 95%;
+  .deck {
+    width: 320px;
+    min-height: 320px;
+    padding: 8px;
+    border-radius: 4px;
+    box-shadow: 3px 6px 3px 0 rgba(46, 61, 73, 0.5);
   }
 
-@media (min-width: 768px) {
-  .container {
-    display: flex;
-    width: 80%;
+  .deck .card {
+      height: 67px;
+      width: 67px;
+      border-radius: 4px;
+      box-shadow: 3px 3px 3px 0 rgba(46, 61, 73, 0.5);
+  }
+
+  .score-panel {
+      text-align: left;
+      width: 200px;
+      margin-bottom: 2px;
   }
