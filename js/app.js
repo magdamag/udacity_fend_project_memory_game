@@ -26,7 +26,7 @@ let countTime = 0,
     countStars = 3;
     timer = new Timer();
 
-// Not very intuitive but works
+// restart game on restart button click OR play again in modal
 [...document.querySelectorAll('.restart')].forEach(function (r) {
   r.addEventListener('click', function() {
     event.preventDefault();
@@ -34,11 +34,13 @@ let countTime = 0,
   });
 });
 
+// hide modal
 document.getElementById('cancel').addEventListener('click', function() {
   event.preventDefault();
   document.getElementById('modal-congrats').style.display = 'none';
 });
 
+//update time
 timer.addEventListener('secondsUpdated', function (e) {
   document.getElementById('timer').innerText = 'Time: ' + timer.getTimeValues().toString();
 });
